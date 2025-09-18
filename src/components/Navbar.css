@@ -1,0 +1,149 @@
+/* Reset + Variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estructura base */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* El contenido se expande y empuja el footer */
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* FOOTER */
+.footer {
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: auto; /* 👈 clave para que siempre quede abajo */
+  box-shadow: 0 -2px 6px var(--shadow);
+}
+
+.footer p {
+  margin: 0;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.footer p:hover {
+  opacity: 1;
+}
+
+
+:root {
+  --primary: #e35f91;
+  --primary-hover: #ff1493;
+  --text: #333;
+  --bg: #fff;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+  --radius: 8px;
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+flex: 1;
+display: flex;
+flex-direction: column;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+  height: 100vh;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0.8rem 2rem;
+  background: var(--bg);
+  box-shadow: 0 2px 8px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: var(--transition);
+}
+
+/* Logo */
+nav img {
+  width: 200px;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+nav img:hover {
+  transform: scale(1.05);
+}
+
+/* Links */
+nav a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--primary-hover);
+  transition: var(--transition);
+  border-radius: 2px;
+}
+
+nav a:hover {
+  color: var(--primary-hover);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Special Text */
+nav span {
+  font-weight: bold;
+  color: var(--primary-hover);
+}
+
+/* Button */
+nav button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+nav button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px var(--shadow);
+}
